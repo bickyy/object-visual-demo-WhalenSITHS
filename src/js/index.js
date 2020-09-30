@@ -1,3 +1,7 @@
+const DOMSelectors = {
+  displayContainer: document.querySelector(".container"),
+};
+
 const menu = [
   {
     name: "Pizza Slice",
@@ -26,7 +30,7 @@ const menu = [
   {
     name: "Grilled Cheese",
     vegetarian: true,
-    price: 4,
+    price: 4.0,
     img:
       "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80",
     inStock: false,
@@ -50,7 +54,7 @@ const menu = [
   {
     name: "Cheeseburger",
     vegetarian: false,
-    price: 6,
+    price: 6.0,
     img:
       "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=902&q=80",
     inStock: true,
@@ -64,3 +68,29 @@ const menu = [
     inStock: true,
   },
 ];
+
+function init() {
+  menu.forEach((el) => {
+    DOMSelectors.container.insertAdjacentHTML (
+      "afterbegin",
+    `
+      <ul class="item-list">
+      <li class="item-name item-value">${el.name}</li>
+      <li class="item-price item-value">$${el.price}</li>
+      <li class="item-vegetarian item-value">
+        ${el.vegetarian ? "Vegetarian" : "Not Vegetarian"}
+      </li>
+      <li class = "item-image">
+        <img class = "item-image"
+          src="${el.img}"
+          alt=""
+          />
+      </li>
+      <li class="item-in-stock item-value">
+        ${el.inStock ? "In Stock" : "Out of Stock"}
+      </li>
+      </ul>
+    `
+    );
+  });
+}
