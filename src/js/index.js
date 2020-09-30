@@ -1,5 +1,5 @@
 const DOMSelectors = {
-  displayContainer: document.querySelector(".container"),
+  container: document.querySelector(".container"),
 };
 
 const menu = [
@@ -94,3 +94,4 @@ function init() {
     );
   });
 }
+init();
