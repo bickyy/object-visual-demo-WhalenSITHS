@@ -72,13 +72,13 @@ const menu = [
 function init() {
   menu.forEach((el) => {
     DOMSelectors.container.insertAdjacentHTML (
-      "afterbegin",
+      "afterbegin", 
     `
       <ul class="item-list">
       <li class="item-name item-value">${el.name}</li>
       <li class="item-price item-value">$${el.price}</li>
       <li class="item-vegetarian item-value">
-        ${el.vegetarian ? "Vegetarian" : "Not Vegetarian"}
+        ${el.vegetarian ? "Vegetarian" : "Not Vegetarian"} 
       </li>
       <li class = "item-image">
         <img class = "item-image"
@@ -95,3 +95,5 @@ function init() {
   });
 }
 init();
+
+//what does the ? do  
